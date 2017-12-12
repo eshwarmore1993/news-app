@@ -1,0 +1,18 @@
+<div class="card-panel grey lighten-5 z-depth-1">
+    Categories
+    <form>
+        <p *ngFor="let category of categories; let i = index">
+            <input type="checkbox" [value]="category" [checked]="selectedCategories.indexOf(category) !== -1" class="filled-in" [id]="'category' + i"
+                (change)="categoryCheckbox($event)" />
+            <label [for]="'category' + i">{{category}}</label>
+        </p>
+    </form>
+</div>
+<div class="card-panel grey lighten-5 z-depth-1">
+    Publishers
+    <p *ngFor="let publisher of publishers; let i = index">
+        <input type="checkbox" [value]="publisher" [checked]="selectedPublishers.indexOf(publisher) !== -1" class="filled-in" [id]="'publisher' + i"
+            (change)="publisherCheckbox($event)" />
+        <label [for]="'publisher' + i">{{publisher}}</label>
+    </p>
+</div>
